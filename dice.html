@@ -1,0 +1,41 @@
+<!-- tell the browser what type of document to expect -->
+<!DOCTYPE html> 
+<!-- html tag contains all HTML elements -->
+<html>
+<!-- head tag can include a title for the document, scripts, styles, meta information,  -->
+	<head>
+	</head>
+<!-- body tag contains all the contents of an HTML document, such as text, hyperlinks, images, tables, lists -->
+	<body>
+		<h1>
+			Dice Roller
+		</h1>
+		<button id="roll"> Roll</button>
+		<!-- these will be where the results are displayed -->
+		<h2 id="firstDie"></h2>
+		<h2 id="secondDie"></h2>
+		<h2 id="total"></h2>
+
+		<script>
+		//attach handles to the different elements then assign them to variables
+		var rollButton = document.getElementById("roll");
+		var firstDie = document.getElementById("firstDie");
+		var secondDie = document.getElementById("secondDie");
+		var total = document.getElementById("total");
+
+		//create  the dice roll function
+		rollButton.onclick = function(){
+			//Math.floor rounds, Math.random picks a number between 0 and 1.  Assign the results to variables
+			var first = Math.floor(Math.random()*6);
+			var second = Math.floor(Math.random()*6);
+			//add both die
+			var firstAndSecond = first + second;
+			//display by taking the variable assigned to the handles, use innerHTML to insert values equal to what you want to insert
+			firstDie.innerHTML="The first die rolled: " + first;
+			secondDie.innerHTML="The second die rolled: " + second;
+			total.innerHTML="The total is: " + firstAndSecond;
+		}	
+
+		</script>
+	</body>
+</html>
